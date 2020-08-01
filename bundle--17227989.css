@@ -144,11 +144,6 @@ p a:visited {
         transform:rotate(10deg)
     }
 }
-@media (max-width: 870px) {
-    .github-corner {
-        display:none
-    }
-}
 
 .github-corner:hover .octo-arm {
     animation:octocat-wave 560ms ease-in-out
