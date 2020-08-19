@@ -1,0 +1,21 @@
+@keyframes octocat-wave {
+    0%, to {
+        transform:rotate(0)
+    }
+
+    20%, 60% {
+        transform:rotate(-25deg)
+    }
+
+    40%, 80% {
+        transform:rotate(10deg)
+    }
+}
+
+.github-corner:hover .octo-arm {
+    animation:octocat-wave 560ms ease-in-out
+}
+
+pre > code {
+  background-color: #edf2f7 !important;
+}

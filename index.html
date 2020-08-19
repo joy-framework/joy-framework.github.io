@@ -4,95 +4,154 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Joy Framework</title>
-    <link rel="stylesheet" href="bundle--17227989.css" />
+    <link rel="stylesheet" href="css/atom-one-light.css" />
+    <link rel="stylesheet" href="css/tailwind.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
   </head>
-  <body class="bg-purple-gradient">
-    <a href="https://github.com/joy-framework/joy" class="github-corner" aria-label="View source on Github"><svg width="75" height="75" viewBox="0 0 250 250" style="fill:#fff;z-index:10;color:#151513;mix-blend-mode:screen;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7
-       120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9
-       125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6
-       C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0
-       C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1
-       C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4
-       C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9
-       C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5
-       C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9
-       L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
-    <vstack class="mw8 center pa4-ns pa3">
-  <hstack spacing="l">
-    <div class="white">
-      <a
-        class="white no-underline"
-        href="/">
-        😇Joy
-      </a>
-    </div>
-  </hstack>
+  <body>
+    <a href="https://github.com/joy-framework/joy" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
-  <div class="pt4 pt5-ns">
-    <vstack spacing="l">
-      <hstack
-        class="responsive"
-        spacing="l" stretch="">
-        <vstack spacing="l">
-          <div class="white">
-            <h1 class="white lh-title f1-ns f2">Joy to the web</h1>
+    <div class="lg:w-2/3 sm:w-full p-4 mx-auto">
+      <a class="no-underline" href="/">😇Joy</a>
 
-            <div class="white lh-copy f4">
-              <span>Joy is a web framework written in</span>
+      <div class="mt-32 grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10">
+        <div>
+          <div class="text-4xl">Joy to the web</div>
+          <h2 class="text-l mt-4 text-gray-700">Joy is a web framework written in
+            <a href="https://janet-lang.org" class="underline text-purple-500">janet</a>
+            for people who like lisp syntax, fast startup time and low memory usage.</h2>
 
-              <a
-                class="white underline"
-                href="https://janet-lang.org">
-                janet</a>
+            <div class="text-gray-700">
+              <div class="mt-4">
+                <img class="w-6 inline-block" src="images/checkmark.png" /> Clojure-like syntax
+              </div>
 
-              <span>
-                for people who like clojure syntax, fast startup time and very low memory usage.
-              </span>
+              <div>
+                <img class="w-6 inline-block" src="images/checkmark.png" /> Starts up fast, stays fast
+              </div>
+
+              <div>
+                <img class="w-6 inline-block" src="images/checkmark.png" /> New projects run in ~1 MB of RAM
+              </div>
             </div>
-          </div>
-        </vstack>
 
-        <div class="br3 pa4 bg-purp f4 monospace" style="width: 100%">
-          <div ><span class="washed-purple">(</span><span class="orange">use</span><span> </span><span class="white">joy</span><span class="washed-purple">)</span><br><br><span class="washed-purple">(</span><span class="white">route</span> <span class="orange">:get</span> <span class="light-orange">"/"</span> <span class="orange">:home</span><span class="washed-purple">)</span><br/><br/><span class="washed-purple">(</span><span class="orange">defn</span><span> </span><span class="white">home</span><span> </span><span class="washed-purple">[</span><span class="white">request</span><span class="washed-purple">]</span><br><span>&nbsp;&nbsp;</span><span class="washed-purple">(</span><span class="white">text/plain</span><span><span> </span><span class="light-orange">"You found joy!"</span><span class="washed-purple">))</span><br><br><span class="washed-purple">(</span><span class="orange">def</span><span> </span><span class="white">app</span><span> </span><span class="washed-purple">(</span><span class="white">app</span><span class="washed-purple">)</span><span class="washed-purple">)</span><br><br><span class="washed-purple">(</span><span class="white">server</span><span> </span><span class="white">app</span><span> </span><span class="orange">9001</span><span class="washed-purple">)</span></div>
+          <a class="inline-block mt-6 px-5 py-3 rounded-lg bg-purple-500 text-white shadow-lg hover:grow transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:shadow-2xl"
+             href="https://github.com/joy-framework/joy/blob/master/docs/introduction.md">
+            Documentation
+          </a>
         </div>
-      </hstack>
 
-      <div class>
-        <hstack
-          class="responsive"
-          align-y="top"
-          spacing="l">
-          <div class="feature-1">
-            <h1 class="f3 lh-title white black-ns">Starts fast, stays fast</h1>
+        <div>
+          <pre>
+            <code class="rounded-lg">
+  (import joy :prefix "")
 
-            <p class="lh-copy black-ns white">
-              Joy starts up in milliseconds so you can get started (and restarted) without worrying
-              about restarting the repl and waiting... a while
-            </p>
-          </div>
+  (route :get "/" :home)
+  (defn home [request]
+    (text/plain "You found joy!"))
 
-          <div class="feature-2">
-            <h1 class="f3 lh-title white black-ns">Low Memory Usage</h1>
+  (def app (app))
 
-            <p class="lh-copy black-ns white">
-              Joy takes so little memory, you can run dozens (if not hundreds) of instances on a
-              cheap virtual private server
-            </p>
-          </div>
-
-          <div class="feature-3">
-            <h1 class="f3 lh-title white black-ns">Clojure-like</h1>
-
-            <p class="lh-copy black-ns white">
-              Joy is written with janet, a modern lisp with clojure-ish idioms, including data
-              literals and immutable data structures
-            </p>
-          </div>
-        </hstack>
+  (server app 9001)
+            </code>
+          </pre>
+        </div>
       </div>
-    </vstack>
-  </div>
-</vstack>
+    </div>
 
+    <div class="bg-gray-200 py-4">
+      <div class="lg:w-2/3 sm:w-full p-4 mx-auto">
+        <div class="text-2xl">Installation on macOS</div>
+        <div class="text-gray-600 mt-4">Janet can be installed with homebrew:</div>
+        <code class="mt-2 inline-block rounded-lg border border-gray-500 p-2">brew install janet</code>
+        <div class="text-gray-600 mt-4">Then to install joy:</div>
+        <code class="mt-2 inline-block rounded-lg border border-gray-500 p-2">jpm install joy</code>
+        <div class="text-gray-600 mt-4">More installation options for janet <a class="text-purple-500 underline" href="https://janet-lang.org/docs/index.html">here</a></div>
+      </div>
+    </div>
+
+    <div class="lg:w-2/3 sm:w-full p-4 mx-auto">
+      <div class="grid sm:grid-flow-row lg:grid-flow-col gap-10 text-gray-700">
+        <div>
+          <div class="text-2xl text-black">Data as html</div>
+          <p class="mt-4 text-gray-700">
+            Joy uses <a class="underline text-purple-500" href="https://github.com/weavejester/hiccup">hiccup</a> or html as data to render html.
+            There is no separate template language to learn! You have all of janet's power when writing
+            html!
+          </p>
+          <p class="mt-4 text-gray-700">
+            There is a shorthand for css classes too! Great for atomic css!
+          </p>
+
+          <p class="mt-4 text-gray-700">
+            The real beauty of having a regular old data structure represent your
+            html is that you can assign it to a variable and create your own names
+            without changing the rendered html!
+          </p>
+        </div>
+
+        <div>
+          <div>
+            <pre>
+              <code class="rounded-lg">
+  [:form
+    [:input {:type "text" :placeholder "Your name"}]]
+    [:input {:type "text" :placeholder "Your email"}]
+    [:input {:type "submit" :value "Submit"}]
+              </code>
+            </pre>
+
+            <div class="-mt-6">Turns into...</div>
+
+            <pre class="">
+              <code class="rounded-lg">
+  &lt;form&gt;
+    &lt;input type="text" placeholder="Your name" /&gt;
+    &lt;input type="email" placeholder="Your email" /&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+  &lt;/hstack&gt;
+              </code>
+            </pre>
+          </div>
+
+            <pre>
+              <code class="rounded-lg">
+  [:h1.text-2xl.text-gray-400
+    "You found joy!"]
+              </code>
+            </pre>
+
+            <div class="-mt-6">Turns into...</div>
+
+            <pre class="">
+              <code class="rounded-lg">
+  &lt;h1 class="text-2xl text-gray-400"&gt;You found joy!&lt;/h1&gt;
+              </code>
+            </pre>
+
+          <pre>
+            <code class="rounded-lg">
+  (def h1 :h1.text-2xl.text-gray-400)
+
+  [h1 "You found joy!"]
+            </code>
+          </pre>
+
+          <div class="-mt-6">Turns into...</div>
+
+          <pre class="">
+            <code class="rounded-lg">
+  &lt;h1 class="text-2xl text-gray-400"&gt;You found joy!&lt;/h1&gt;
+            </code>
+          </pre>
+
+        </div>
+
+      </div>
+    </div>
+
+    <script data-goatcounter="https://joyframework.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
