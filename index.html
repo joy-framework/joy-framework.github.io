@@ -203,6 +203,33 @@
       </div>
     </div>
 
+    <div class="lg:w-2/3 p-4 mx-auto text-gray-700">
+      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
+        <div>
+          <div class="text-2xl text-black">Deploy a single binary</div>
+
+          <p class="mt-4">
+            Say goodbye to complicated deploys that involve multiple runtime dependencies. Joy compiles
+            to an executable.
+          </p>
+          <p class="mt-4">
+            Compile your code for the target machine, copy it over and start it up. Deploy finished.
+          </p>
+        </div>
+
+        <div>
+          <pre>
+            <code class="rounded-lg bash">
+  joy new easy-deploy
+  cd easy-deploy
+  jpm build
+  ./build/easy-deploy # => Server listening on http://localhost:9001
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+
     <script data-goatcounter="https://joyframework.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
