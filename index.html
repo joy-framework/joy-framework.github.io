@@ -179,51 +179,48 @@
 
     <div class="lg:w-2/3 p-4 mx-auto text-gray-700">
       <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <div>
-          <div class="text-2xl text-black">Everything is a function!</div>
+        <div class="text-gray-800">
+          <div class="text-2xl text-black">Everything is a function</div>
 
           <p class="mt-4">
-            Joy doesn't uses objects, classes or any other OOP-isms.
-          <p class="mt-4">
-            It's just functions (and some dynamically scoped vars).
-            So when you organize your project in files and folders, there isn't this whole other set of organization on top.
-          </p>
-          <p class="mt-4">
-            In fact, unlike most web frameworks you can structure things how YOU want them. It's more like a grab bag of utility functions.
-          </p>
+            Joy doesn't uses objects or classes. Everything is a function that takes a request and outputs a response
           </p>
         </div>
 
         <div>
           <pre>
             <code class="rounded-lg">
-  # src/routes/todos.janet
-
-  (import joy :prefix "")
+  (use joy)
 
 
-  (route :get "/todos/new" :todos/new)
-  (route :post "/todos" :todos/create)
+  (route :get "/todos/new" :new)
+  (route :post "/todos" :create)
 
 
-  (defn todos/new [request]
-    (form-for [request :todos/create]
+  (def todo
+    (body :todos
+      (validates :name :required true)
+      (permit :name :finished)))
+
+
+  (defn new [request &opt errors]
+    (form-for [request :create]
       [:input {:type "text" :name "name"}]
+      [:div (get errors :name)]
+
       [:label {:for "finished"}
-        [:input {:type "checkbox" :name "finished"}]
-        "Finished"]
+        [:input {:type "checkbox" :name "finished" :value 1}]
+        [:span "Finished"]]
+      [:div (get errors :finished)]
+
       [:input {:type "submit" :value "Submit"}]))
 
 
-  (defn todos/create [request]
-    (def {:body body} request)
-
-    (def todo (->> (table/slice body [:name :finished])
-                   (db/insert :todos)))
-
-    (if todo
-      (redirect-to :home)
-      (todos/new (put request :error "There was a problem!"))))
+  (defn create [request]
+    (let [todo (-> request todo db/save)]
+      (if (saved? todo)
+        (redirect-to :home)
+        (new request (errors todo)))))
             </code>
           </pre>
         </div>
