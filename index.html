@@ -104,6 +104,35 @@
 
       <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
         <p class="mt-4 text-gray-700">
+          Use html inside of janet, not the other way around
+        </p>
+
+        <div>
+          <pre>
+            <code class="rounded-lg">
+  (let [groceries [{:name "eggs"}
+                   {:name "milk"}
+                   {:name "tomatoes"}]]
+    [:ul
+      (foreach [g groceries]
+        [:li (g :name)])])
+            </code>
+          </pre>
+
+          <pre class="-mt-10">
+            <code class="html rounded-lg">
+  &lt;ul&gt;
+    &lt;li&gt;eggs&lt;/li&gt;
+    &lt;li&gt;milk&lt;/li&gt;
+    &lt;li&gt;tomatoes&lt;/li&gt;
+  &lt;/ul&gt;
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
+        <p class="mt-4 text-gray-700">
           There is a shorthand for css classes too! Great for atomic css!
         </p>
 
