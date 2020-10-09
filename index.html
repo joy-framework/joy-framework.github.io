@@ -1,248 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Joy Framework</title>
-    <link rel="stylesheet" href="css/atom-one-light.css" />
-    <link rel="stylesheet" href="css/tailwind.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
-  </head>
-  <body>
-    <a href="https://github.com/joy-framework/joy" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+<!DOCTYPE HTML><html dir="ltr" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>Joy Framework</title><link rel="stylesheet" href="css/atom-one-light.css" /><link rel="stylesheet" href="tailwind.min.css" /><link rel="stylesheet" href="css/app.css" /></head><body><div class="lg:mt-10"><div class="lg:w-2/3 p-4 mx-auto"><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="flex-1"><div class="self-stretch flex-col flex-1 space-y-2"><h1 class="text-5xl text-gray-800">Joy</h1><h2 class="text-3xl tracking-tight text-gray-800">A maximalist web framework for lisp aficionados</h2><h4 class="text-l text-gray-800">Use the <a href="https://janet-lang.org" class="text-indigo-500 underline">janet</a> programming language to build web apps faster with less code and very low memory usage.</h4><div class="mt-4"><a href="https://github.com/joy-framework/joy/blob/master/docs/introduction.md" class="inline-block my-6 px-5 py-3 rounded-lg bg-indigo-500 text-white shadow-lg hover:bg-indigo-700">Read the docs</a></div></div></div><div class="flex-1"><pre><code class="rounded-lg p-6 clojure">(import joy :prefix &quot;&quot;)
 
-    <div class="lg:w-2/3 p-4 mx-auto">
-      <div class="mt-10 grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10">
-        <div>
-          <h1 class="text-5xl">Joy</h1>
-          <h2 class="text-3xl tracking-tight">A maximalist web application framework for lisp aficionados</h2>
-          <h3 class="text-l mt-4 text-gray-700">
-            Use the <a href="https://janet-lang.org" class="underline text-purple-500">janet</a> programming language to build web apps faster, with more fun, less code and low memory usage.
-          </h3>
+(route :get &quot;&#x2F;&quot; :home)
 
-          <a class="inline-block my-6 px-5 py-3 rounded-lg bg-purple-500 text-white shadow-lg hover:bg-purple-700"
-             href="https://github.com/joy-framework/joy/blob/master/docs/introduction.md">
-            Documentation
-          </a>
-        </div>
+(defn home [request]
+  (text&#x2F;plain &quot;You found joy!&quot;))
 
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  (import joy :prefix "")
+(def app (app))
 
-  (route :get "/" :home)
-  (defn home [request]
-    (text/plain "You found joy!"))
+(server app 9001)</code></pre></div></div></div></div><div class="bg-gray-100 py-4 mt-6"><div class="lg:w-2/3 p-4 mx-auto"><h3 class="text-2xl text-gray-800">Installation on macOS</h3><div class="mt-4"><div class="self-stretch flex-col flex-1 space-y-4"><div class="self-stretch flex-col flex-1"><div class="text-gray-600">Janet can be installed with homebrew:</div><div class="mt-2 inline-block rounded-lg border border-gray-500 p-2">brew install janet</div></div><div class="self-stretch flex-col flex-1"><div class="text-gray-600">Then to install joy:</div><div class="mt-2 inline-block rounded-lg border border-gray-500 p-2">jpm install joy</div></div><div class="text-gray-600">More installation options for janet <a href="https://janet-lang.org/docs/index.html" class="text-indigo-500 underline">here</a></div></div></div></div></div><div class="lg:mt-16"><div class="lg:w-2/3 p-4 mx-auto"><div class="self-stretch flex-col flex-1 space-y-16"><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="self-stretch flex-col flex-1 space-y-4"><h3 class="text-2xl text-gray-800">HTML is data</h3><div class="text-gray-800 flex-1">Joy uses <a href="https://github.com/weavejester/hiccup" class="text-indigo-500 underline">hiccup</a> to render html. There is no separate template language to learn! You have all of janet&#x27;s power when writing html!</div></div><div class="self-stretch flex-col flex-1 space-y-4"><pre class="flex-1"><code class="rounded-lg p-6 clojure">[:form
+  [:input {:type &quot;text&quot; :placeholder &quot;Your name&quot;}]
+  [:input {:type &quot;email&quot; :placeholder &quot;Your email&quot;}]
+  [:input {:type &quot;submit&quot; :value &quot;Submit&quot;}]]
+</code></pre><pre class="flex-1"><code class="rounded-lg p-6 html">&lt;form&gt;
+  &lt;input type=&quot;text&quot; placeholder=&quot;Your name&quot; &#x2F;&gt;
+  &lt;input type=&quot;email&quot; placeholder=&quot;Your email&quot; &#x2F;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; &#x2F;&gt;
+&lt;&#x2F;form&gt;
+</code></pre></div></div><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="text-gray-800 flex-1">Use html inside of janet, not the other way around</div><div class="self-stretch flex-col flex-1 space-y-4"><pre class="flex-1"><code class="rounded-lg p-6 clojure">(let [groceries [{:name &quot;eggs&quot;}
+                 {:name &quot;milk&quot;}
+                 {:name &quot;tomatoes&quot;}]]
+  [:ul
+    (foreach [g groceries]
+      [:li (g :name)])])
+</code></pre><pre class="flex-1"><code class="rounded-lg p-6 html">&lt;ul&gt;
+  &lt;li&gt;eggs&lt;&#x2F;li&gt;
+  &lt;li&gt;milk&lt;&#x2F;li&gt;
+  &lt;li&gt;tomatoes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;</code></pre></div></div><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="text-gray-800 flex-1">There is a shorthand for css classes too! Great for atomic css!</div><div class="self-stretch flex-col flex-1 space-y-4"><pre class="flex-1"><code class="rounded-lg p-6 clojure">[:h1.text-2xl.text-gray-400
+  &quot;You found joy!&quot;]
+</code></pre><pre class="flex-1"><code class="rounded-lg p-6 html">&lt;h1 class=&quot;text-2xl text-gray-400&quot;&gt;You found joy!&lt;&#x2F;h1&gt;</code></pre></div></div><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="text-gray-800 flex-1">The real beauty of having a regular old data structure represent your html is that you can assign it to a variable and create your own names without changing the rendered html!</div><div class="self-stretch flex-col flex-1 space-y-4"><pre class="flex-1"><code class="rounded-lg p-6 clojure">  (def h1 :h1.text-2xl.text-gray-400)
 
-  (def app (app))
-
-  (server app 9001)
-            </code>
-          </pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-gray-100 py-4">
-      <div class="lg:w-2/3 p-4 mx-auto">
-        <div class="text-2xl">Installation on macOS</div>
-        <div class="text-gray-600 mt-4">Janet can be installed with homebrew:</div>
-        <code class="mt-2 inline-block rounded-lg border border-gray-500 p-2">brew install janet</code>
-        <div class="text-gray-600 mt-4">Then to install joy:</div>
-        <code class="mt-2 inline-block rounded-lg border border-gray-500 p-2">jpm install joy</code>
-        <div class="text-gray-600 mt-4">More installation options for janet <a class="text-purple-500 underline" href="https://janet-lang.org/docs/index.html">here</a></div>
-      </div>
-    </div>
-
-    <div class="lg:w-2/3 p-4 mx-auto text-gray-700 mt-16">
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <div>
-          <div class="text-2xl text-black">Data as html</div>
-
-          <p class="mt-4 text-gray-700">
-            Joy uses <a class="underline text-purple-500" href="https://github.com/weavejester/hiccup">hiccup</a> or html as data to render html.
-            There is no separate template language to learn! You have all of janet's power when writing
-            html!
-          </p>
-        </div>
-
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  [:form
-    [:input {:type "text" :placeholder "Your name"}]]
-    [:input {:type "email" :placeholder "Your email"}]
-    [:input {:type "submit" :value "Submit"}]
-            </code>
-          </pre>
-
-          <pre class="-mt-10">
-            <code class="rounded-lg">
-  &lt;form&gt;
-    &lt;input type="text" placeholder="Your name" /&gt;
-    &lt;input type="email" placeholder="Your email" /&gt;
-    &lt;input type="submit" value="Submit" /&gt;
-  &lt;/hstack&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <p class="mt-4 text-gray-700">
-          Use html inside of janet, not the other way around
-        </p>
-
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  (let [groceries [{:name "eggs"}
-                   {:name "milk"}
-                   {:name "tomatoes"}]]
-    [:ul
-      (foreach [g groceries]
-        [:li (g :name)])])
-            </code>
-          </pre>
-
-          <pre class="-mt-10">
-            <code class="html rounded-lg">
-  &lt;ul&gt;
-    &lt;li&gt;eggs&lt;/li&gt;
-    &lt;li&gt;milk&lt;/li&gt;
-    &lt;li&gt;tomatoes&lt;/li&gt;
-  &lt;/ul&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <p class="mt-4 text-gray-700">
-          There is a shorthand for css classes too! Great for atomic css!
-        </p>
-
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  [:h1.text-2xl.text-gray-400
-    "You found joy!"]
-            </code>
-          </pre>
-
-          <pre class="-mt-10">
-            <code class="html rounded-lg">
-  &lt;h1 class="text-2xl text-gray-400"&gt;You found joy!&lt;/h1&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <p class="mt-4 text-gray-700">
-          The real beauty of having a regular old data structure represent your
-          html is that you can assign it to a variable and create your own names
-          without changing the rendered html!
-        </p>
-
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  (def h1 :h1.text-2xl.text-gray-400)
-
-  [h1 "You found joy!"]
-            </code>
-          </pre>
-
-          <pre class="-mt-10">
-            <code class="html rounded-lg">
-  &lt;h1 class="text-2xl text-gray-400"&gt;You found joy!&lt;/h1&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="lg:w-2/3 p-4 mx-auto text-gray-700">
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <div class="text-gray-800">
-          <div class="text-2xl text-black">Everything is a function</div>
-
-          <p class="mt-4">
-            Joy doesn't uses objects or classes. Everything is a function that takes a request and outputs a response
-          </p>
-        </div>
-
-        <div>
-          <pre>
-            <code class="rounded-lg">
-  (use joy)
+  [h1 &quot;You found joy!&quot;]</code></pre><pre class="flex-1"><code class="rounded-lg p-6 html">&lt;h1 class=&quot;text-2xl text-gray-400&quot;&gt;You found joy!&lt;&#x2F;h1&gt;</code></pre></div></div></div></div></div><div class="lg:mt-16"><div class="lg:w-2/3 p-4 mx-auto"><div class="self-stretch flex-col flex-1 space-y-16"><div class="self-stretch flex-row lg:flex lg:space-x-4"><div class="flex-1"><div class="self-stretch flex-col flex-1 space-y-4"><h3 class="text-2xl text-gray-800">Everything is a function</h3><div class="text-gray-800 flex-1">Joy doesn&#x27;t uses objects or classes. Everything is a function that takes a request and outputs a response</div></div></div><div class="flex-1"><div class="self-stretch flex-col flex-1 space-y-4"><pre class="flex-1"><code class="rounded-lg p-6 clojure">(use joy)
 
 
-  (route :get "/todos/new" :new)
-  (route :post "/todos" :create)
+(route :get &quot;&#x2F;todos&#x2F;new&quot; :new)
+(route :post &quot;&#x2F;todos&quot; :create)
 
 
-  (def todo
-    (body :todos
-      (validates :name :required true)
-      (permit :name :finished)))
+(def todo
+  (body :todos
+    (validates :name :required true)
+    (permit :name :finished)))
 
 
-  (defn new [request &opt errors]
+(defn new [request &amp;opt errors]
+  (default errors {})
+
+  (let [todo (todo request)]
+
     (form-for [request :create]
-      [:input {:type "text" :name "name"}]
-      [:div (get errors :name)]
+      (text-field todo :name)
+      [:div (errors :name)]
 
-      [:label {:for "finished"}
-        [:input {:type "checkbox" :name "finished" :value 1}]
-        [:span "Finished"]]
-      [:div (get errors :finished)]
+      (label-for :finished
+        # generates hidden input for false&#x2F;zero values
+        (checkbox-field todo :finished)
+        [:span &quot; Finished&quot;])
+      [:div (errors :finished)]
 
-      [:input {:type "submit" :value "Submit"}]))
+      (submit &quot;Save&quot;))))
 
 
-  (defn create [request]
-    (let [todo (-> request todo db/save)]
-      (if (saved? todo)
-        (redirect-to :home)
-        (new request (errors todo)))))
-            </code>
-          </pre>
-        </div>
-      </div>
-    </div>
+(defn create [request]
+  (let [todo (-&gt; request todo db&#x2F;save)]
 
-    <div class="lg:w-2/3 p-4 mx-auto text-gray-700">
-      <div class="lg:grid sm:grid-flow-row lg:grid-flow-col lg:grid-cols-2 gap-10 text-gray-700">
-        <div>
-          <div class="text-2xl text-black">Deploy a single binary</div>
-
-          <p class="mt-4">
-            Say goodbye to complicated deploys that involve multiple runtime dependencies. Joy compiles
-            to an executable.
-          </p>
-          <p class="mt-4">
-            Compile your code for the target machine, copy it over and start it up. Deploy finished.
-          </p>
-        </div>
-
-        <div>
-          <pre>
-            <code class="rounded-lg bash">
-  joy new easy-deploy
-  cd easy-deploy
-  jpm build
-  ./build/easy-deploy # => Server listening on http://localhost:9001
-            </code>
-          </pre>
-        </div>
-      </div>
-    </div>
-
-    <script data-goatcounter="https://joyframework.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <script src="js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
+    (if (saved? todo)
+      (redirect-to :home)
+      (new request (errors todo)))))
+</code></pre></div></div></div></div></div></div><script async="" src="//gc.zgo.at/count.js" data-goatcounter="https://joyframework.goatcounter.com/count"></script><script src="js/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>

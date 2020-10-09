@@ -1,0 +1,4 @@
+[:form
+  [:input {:type "text" :placeholder "Your name"}]
+  [:input {:type "email" :placeholder "Your email"}]
+  [:input {:type "submit" :value "Submit"}]]
