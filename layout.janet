@@ -9,7 +9,7 @@
        [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
        [:title (get options :title "Joy Framework")]
        [:link {:href "css/atom-one-light.css" :rel "stylesheet"}]
-       [:link {:href "tailwind.min.css" :rel "stylesheet"}]
+       [:link {:href "css/tailwind.min.css" :rel "stylesheet"}]
        [:link {:href "css/app.css" :rel "stylesheet"}]]
       [:body body
        [:script {:data-goatcounter "https://joyframework.goatcounter.com/count"
