@@ -10,7 +10,8 @@
        [:title (get options :title "Joy Framework")]
        [:link {:href "css/atom-one-light.css" :rel "stylesheet"}]
        [:link {:href "css/tailwind.min.css" :rel "stylesheet"}]
-       [:link {:href "css/app.css" :rel "stylesheet"}]]
+       [:link {:href "css/app.css" :rel "stylesheet"}]
+       [:link {:href "favicon.ico" :rel "shortcut icon" :type "image/x-icon"}]]
       [:body body
        [:script {:data-goatcounter "https://joyframework.goatcounter.com/count"
                  :async ""
