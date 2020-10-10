@@ -31,10 +31,10 @@
     [h3 "Installation on macOS"]
     [mt-4
      [vstack:md
-      [vstack
+      [:div
        [text:light "Janet can be installed with homebrew:"]
        [install-instruction "brew install janet"]]
-      [vstack
+      [:div
         [text:light "Then to install joy:"]
         [install-instruction "jpm install joy"]]
       [text:light "More installation options for janet "
@@ -43,7 +43,7 @@
   [mt-16
    [container
     [vstack:lg
-     [hstack:md
+     [col:1/2
       [vstack:md
        [h3 "HTML is data"]
        [text
@@ -60,7 +60,7 @@
         [code {:class "html"}
          (example :form.html)]]]]
 
-     [hstack:md
+     [col:1/2
       [text "Use html inside of janet, not the other way around"]
       [vstack:md
        [pre
@@ -70,7 +70,7 @@
         [code {:class "html"}
           (example :loop.html)]]]]
 
-     [hstack:md
+     [col:1/2
       [text "There is a shorthand for css classes too! Great for atomic css!"]
       [vstack:md
        [pre
@@ -80,7 +80,7 @@
         [code {:class "html"}
           (example :css.html)]]]]
 
-     [hstack:md
+     [col:1/2
       [text "The real beauty of having a regular old data structure represent your html is that you can assign it to a variable and create your own names without changing the rendered html!"]
       [vstack:md
        [pre
@@ -93,7 +93,7 @@
   [mt-16
    [container
     [vstack:lg
-     [hstack:md
+     [col:1/2
       [spacer
        [vstack:md
         [h3 "Everything is a function"]
