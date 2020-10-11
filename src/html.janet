@@ -16,7 +16,7 @@
 (def vstack:md (class vstack :space-y-4))
 (def vstack:lg (class vstack :space-y-16))
 (def spacer :div.flex-1)
-(def col:1/2 :div.grid.sm:grid-flow-row.lg:grid-flow-col.lg:grid-cols-2.gap-10)
+(def col:1/2 :div.lg:grid.lg:grid-flow-col.lg:grid-cols-2.gap-10)
 
 (def cta :a.inline-block.my-6.px-5.py-3.rounded-lg.bg-indigo-500.text-white.shadow-lg.hover:bg-indigo-700)
 

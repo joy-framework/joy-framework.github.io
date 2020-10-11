@@ -1,5 +1,5 @@
-(smuggle ./layout)
-(smuggle ./html)
+(smuggle ./src/layout)
+(smuggle ./src/html)
 
 (defn example [name]
   (-> (string "./examples/" name) slurp string))
