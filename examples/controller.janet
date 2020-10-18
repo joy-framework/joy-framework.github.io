@@ -1,37 +1,47 @@
 (use joy)
 
 
-(route :get "/todos/new" :new)
-(route :post "/todos" :create)
+(route :get "/posts" :index)
+(route :get "/posts/new" :new)
+(route :post "/posts" :create)
 
 
-(def todo
-  (body :todos
-    (validates :name :required true)
-    (permit :name :finished)))
+(def body
+  (body :posts
+    (validates [:title :body] :required true)
+    (permit :title :body)))
+
+
+(defn index [request]
+  (let [posts (db/from :posts)]
+
+    [:ul
+     (foreach [p posts]
+      [:li
+       [:h1 (p :title)]
+       [:p (p :body)]])]))
 
 
 (defn new [request &opt errors]
-  (default errors {})
+  (let [post (body request)]
 
-  (let [todo (todo request)]
+    [:form {:method :post :action "/posts"}
+      [:input {:type "text" :name "name" :value (post :name)}]
+      [:div
+       (errors :name)]
 
-    (form-for [request :create]
-      (text-field todo :name)
-      [:div (errors :name)]
+      [:textarea {:name "body"}
+        (post :body)]
+      [:div
+       (errors :body)]
 
-      (label-for :finished
-        # generates hidden input for false/zero values
-        (checkbox-field todo :finished)
-        [:span " Finished"])
-      [:div (errors :finished)]
-
-      (submit "Save"))))
+      [:input {:type "submit" :value "Save"}]]))
 
 
 (defn create [request]
-  (let [todo (-> request todo db/save)]
+  (let [post (-> (body request)
+                 (db/save))]
 
-    (if (saved? todo)
+    (if (saved? post)
       (redirect-to :home)
-      (new request (errors todo)))))
+      (new request (errors post)))))

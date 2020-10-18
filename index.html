@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html dir="ltr" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>Joy Framework</title><link rel="stylesheet" href="css/atom-one-light.css" /><link rel="stylesheet" href="css/tailwind.min.css" /><link rel="stylesheet" href="css/app.css" /><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /></head><body><div class="lg:mt-10"><div class="container p-4 mx-auto"><div class="self-stretch flex-row lg:flex sm:block md:block lg:space-x-4"><div class="flex-1"><div class="flex flex-col self-stretch flex-auto space-y-2"><h1 class="text-5xl text-gray-800">Joy</h1><h2 class="text-3xl tracking-tight text-gray-800">A maximalist web framework for lisp aficionados</h2><h4 class="text-l text-gray-800">Use the <a href="https://janet-lang.org" class="text-indigo-500 underline">janet</a> programming language to build web apps faster with less code and very low memory usage.</h4><div class="mt-4"><a href="https://github.com/joy-framework/joy/blob/master/docs/introduction.md" class="inline-block my-6 px-5 py-3 rounded-lg bg-indigo-500 text-white shadow-lg hover:bg-indigo-700">Read the docs</a></div></div></div><div class="flex-1"><pre><code class="rounded-lg p-6 clojure">(import joy :prefix &quot;&quot;)
+<!DOCTYPE HTML><html dir="ltr" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Joy Web Framework" name="title" /><meta content="The full stack janet web framework" name="description" /><title>Joy Framework</title><link rel="stylesheet" href="css/atom-one-light.css" /><link rel="stylesheet" href="css/tailwind.min.css" /><link rel="stylesheet" href="css/app.css" /><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /></head><body><div class="lg:mt-10"><div class="container p-4 mx-auto"><div class="self-stretch flex-row lg:flex sm:block md:block lg:space-x-4"><div class="flex-1"><div class="flex flex-col self-stretch flex-auto space-y-2"><h1 class="text-5xl text-gray-800">Joy</h1><h2 class="text-3xl tracking-tight text-gray-800">A maximalist web framework for lisp aficionados</h2><h4 class="text-l text-gray-800">Use the <a href="https://janet-lang.org" class="text-indigo-500 underline">janet</a> programming language to build web apps faster with less code and very low memory usage.</h4><div class="mt-4"><a href="https://github.com/joy-framework/joy/blob/master/docs/introduction.md" class="inline-block my-6 px-5 py-3 rounded-lg bg-indigo-500 text-white shadow-lg hover:bg-indigo-700">Read the docs</a></div></div></div><div class="flex-1"><pre><code class="rounded-lg p-6 clojure">(import joy :prefix &quot;&quot;)
 
 (route :get &quot;&#x2F;&quot; :home)
 
@@ -33,38 +33,48 @@
   [h1 &quot;You found joy!&quot;]</code></pre><pre><code class="rounded-lg p-6 html">&lt;h1 class=&quot;text-2xl text-gray-400&quot;&gt;You found joy!&lt;&#x2F;h1&gt;</code></pre></div></div></div></div></div><div class="lg:mt-16"><div class="container p-4 mx-auto"><div class="flex flex-col self-stretch flex-auto space-y-16"><div class="lg:grid lg:grid-flow-col lg:grid-cols-2 gap-10"><div class="flex-1"><div class="flex flex-col self-stretch flex-auto space-y-4"><h3 class="text-2xl text-gray-800">Everything is a function</h3><div class="text-gray-800">Joy doesn&#x27;t uses objects or classes. Everything is a function that takes a request and outputs a response</div></div></div><div class="flex-1"><div class="flex flex-col self-stretch flex-auto space-y-4"><pre><code class="rounded-lg p-6 clojure">(use joy)
 
 
-(route :get &quot;&#x2F;todos&#x2F;new&quot; :new)
-(route :post &quot;&#x2F;todos&quot; :create)
+(route :get &quot;&#x2F;posts&quot; :index)
+(route :get &quot;&#x2F;posts&#x2F;new&quot; :new)
+(route :post &quot;&#x2F;posts&quot; :create)
 
 
-(def todo
-  (body :todos
-    (validates :name :required true)
-    (permit :name :finished)))
+(def body
+  (body :posts
+    (validates [:title :body] :required true)
+    (permit :title :body)))
+
+
+(defn index [request]
+  (let [posts (db&#x2F;from :posts)]
+
+    [:ul
+     (foreach [p posts]
+      [:li
+       [:h1 (p :title)]
+       [:p (p :body)]])]))
 
 
 (defn new [request &amp;opt errors]
-  (default errors {})
+  (let [post (body request)]
 
-  (let [todo (todo request)]
+    [:form {:method :post :action &quot;&#x2F;posts&quot;}
+      [:input {:type &quot;text&quot; :name &quot;name&quot; :value (post :name)}]
+      [:div
+       (errors :name)]
 
-    (form-for [request :create]
-      (text-field todo :name)
-      [:div (errors :name)]
+      [:textarea {:name &quot;body&quot;}
+        (post :body)]
+      [:div
+       (errors :body)]
 
-      (label-for :finished
-        # generates hidden input for false&#x2F;zero values
-        (checkbox-field todo :finished)
-        [:span &quot; Finished&quot;])
-      [:div (errors :finished)]
-
-      (submit &quot;Save&quot;))))
+      [:input {:type &quot;submit&quot; :value &quot;Save&quot;}]]))
 
 
 (defn create [request]
-  (let [todo (-&gt; request todo db&#x2F;save)]
+  (let [post (-&gt; (body request)
+                 (db&#x2F;save))]
 
-    (if (saved? todo)
+    (if (saved? post)
       (redirect-to :home)
-      (new request (errors todo)))))
+      (new request (errors post)))))
 </code></pre></div></div></div></div></div></div><script async="" src="//gc.zgo.at/count.js" data-goatcounter="https://joyframework.goatcounter.com/count"></script><script src="js/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>

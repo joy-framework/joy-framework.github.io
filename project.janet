@@ -7,9 +7,9 @@
   :url "https://joyframework.com"
   :repo "https://github.com/joy-framework/joy-framework.github.io")
 
-(phony "watch" []
+(phony "rebuild" []
   (os/shell "find . -name '*.janet' | entr -r speakeasy"))
 
-(phony "tailwind" []
-  (os/shell "find . -name 'src/html.janet' | entr -r gust -o css"))
+(phony "gust" []
+  (os/shell "find . -name '*.html' | entr -r gust -o css"))
 
