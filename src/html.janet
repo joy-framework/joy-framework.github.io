@@ -35,3 +35,5 @@
 (def text :div.text-gray-800)
 
 (def link :a.text-indigo-500.underline)
+
+(def logo :img.w-32)

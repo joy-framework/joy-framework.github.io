@@ -5,8 +5,16 @@
   (-> (string "./examples/" name) slurp string))
 
 (layout
-  [mt-10
-   [container
+  [container
+   [hstack
+    [link {:href "index.html"}
+      [logo {:src "logo@2x.png"}]]
+    [spacer]
+    [hstack:md
+      [link {:href "powered-by.html"} "Powered By"]
+      [link {:href "https://github.com/joy-framework/joy/blob/master/docs/introduction.md"} "Docs"]
+      [link {:href "https://github.com/joy-framework/joy"} "Github"]]]
+   [mt-10
     [hstack:md
      [spacer
       [vstack:sm
