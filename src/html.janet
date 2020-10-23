@@ -10,7 +10,9 @@
 
 (def list :div.divide-y-2.divide-gray-200)
 (def hstack :div.self-stretch.flex-row.lg:flex.sm:block.md:block)
+(def header :div.self-stretch.flex-row.block.mb-16.sm:flex)
 (def hstack:md (class hstack :lg:space-x-4))
+(def nav (class hstack :space-x-4.text-center.md:text-left.lg:text-left))
 (def vstack :div.flex.flex-col.self-stretch.flex-auto)
 (def vstack:sm (class vstack :space-y-2))
 (def vstack:md (class vstack :space-y-4))
@@ -23,6 +25,7 @@
 (def mt-4 :div.mt-4)
 (def mt-10 :div.lg:mt-10)
 (def mt-16 :div.lg:mt-16)
+
 (def space-y-4 :div.space-y-4)
 
 (def pre :pre)
@@ -36,4 +39,4 @@
 
 (def link :a.text-indigo-500.underline)
 
-(def logo :img.w-32)
+(def logo :img.w-16.md:w-32.mx-auto.md:mx-0)

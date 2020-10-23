@@ -6,33 +6,35 @@
 
 (layout
   [container
-   [hstack
+
+   [header
     [link {:href "index.html"}
       [logo {:src "logo@2x.png"}]]
     [spacer]
-    [hstack:md
+
+    [nav
       [link {:href "powered-by.html"} "Powered By"]
       [link {:href "https://github.com/joy-framework/joy/blob/master/docs/introduction.md"} "Docs"]
       [link {:href "https://github.com/joy-framework/joy"} "Github"]]]
-   [mt-10
-    [hstack:md
-     [spacer
-      [vstack:sm
-       [h1 "Joy"]
-       [h2 "A maximalist web framework for lisp aficionados"]
-       [h4
-        "Use the "
-        [link {:href "https://janet-lang.org"} "janet"]
-        " programming language to build web apps faster with less code and very low memory usage."]
 
-       [mt-4
-        [cta {:href "https://github.com/joy-framework/joy/blob/master/docs/introduction.md"}
-         "Read the docs"]]]]
+   [hstack:md
+    [spacer
+     [vstack:sm
+      [h1 "Joy"]
+      [h2 "A maximalist web framework for lisp aficionados"]
+      [h4
+       "Use the "
+       [link {:href "https://janet-lang.org"} "janet"]
+       " programming language to build web apps faster with less code and very low memory usage."]
 
-     [spacer
-      [:pre
-       [code {:class "clojure"}
-        (example :app.janet)]]]]]]
+      [mt-4
+       [cta {:href "https://github.com/joy-framework/joy/blob/master/docs/introduction.md"}
+        "Read the docs"]]]]
+
+    [spacer
+     [:pre
+      [code {:class "clojure"}
+       (example :app.janet)]]]]]
 
   [install-container
    [container
