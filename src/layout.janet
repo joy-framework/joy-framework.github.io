@@ -15,8 +15,5 @@
        [:link {:href "css/app.css" :rel "stylesheet"}]
        [:link {:href "favicon.ico" :rel "shortcut icon" :type "image/x-icon"}]]
       [:body body
-       [:script {:data-goatcounter "https://joyframework.goatcounter.com/count"
-                 :async ""
-                 :src "//gc.zgo.at/count.js"}]
        [:script {:src "js/highlight.pack.js"}]
        [:script "hljs.initHighlightingOnLoad();"]]]]))
