@@ -13,7 +13,6 @@
     [spacer]
 
     [nav
-      [link {:href "powered-by.html"} "Powered By"]
       [link {:href "https://github.com/joy-framework/joy/blob/master/docs/introduction.md"} "Docs"]
       [link {:href "https://github.com/joy-framework/joy"} "Github"]]]
 
