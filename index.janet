@@ -57,9 +57,9 @@
        [h3 "HTML is data"]
        [text
         "Joy uses "
-        [link {:href "https://github.com/weavejester/hiccup"}
+        [link {:href "https://github.com/swlkr/janet-html"}
          "hiccup"]
-        " to render html. There is no separate template language to learn! You have all of janet's power when writing html!"]]
+        " syntax to render html. There is no separate template language to learn! You have all of janet's power when writing html!"]]
       [vstack:md
        [pre
         [code {:class "clojure"}
